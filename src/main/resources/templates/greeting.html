@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46171473-1"></script>-->
+
+<!-- Google Tag Manager -->
+<script>
+    
+    
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K5386RC');</script>
+<!-- End Google Tag Manager -->
+<script>
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    //
+    // gtag('config', 'UA-46171473-1');
+
+    $(function() {
+
+        // Set the buttons id in the jQuery function.
+        $("#data_243342, #data_243343, #data_243344").on("click", function() {
+            dataLayer.push({
+                "event": "eventGA",
+                "eventCategory": "data1",
+                "eventAction": "data-1-click",
+                "eventLabel": "yes"
+            });
+        });
+
+
+    });
+</script>
+
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K5386RC"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<p th:text="'Hello, ' + ${name} + '!'" />
+
+<button id="data_243342" type="button">Send 1</button>
+<button id="data_243343" type="button">Send 2</button>
+<button id="data_243344" type="button">Send 3</button>
+</body>
+</html>
