@@ -23,16 +23,13 @@ public class ScheduledTask {
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() throws URISyntaxException {
         WebClient client = WebClient.create();
-
-        String response = client.post()
+        client.post()
                 .uri(new URI("www.google-analytics.com/collect"))
-//                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                .body(BodyInserters.fromValue("v=1&t=pageview&tid=UA-46171473-1&cid=555&ec=video&ea=play&el=holiday&ev=300&dp=%2Fhelloworld"))
+                .body(BodyInserters.fromValue("v=1&t=event&tid=UA-46171473-1&cid=555&ec=transaction&ea=commit&ev=" + new Date().getTime()))
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
         
-//        log.info("The time is now {}", dateFormat.format(new Date()));
-        log.info("The time is now {}", response);
+        log.info("The time is now {}", dateFormat.format(new Date()));
     }
 }
